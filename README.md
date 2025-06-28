@@ -119,3 +119,37 @@ This project is for educational use only. Not affiliated with Kaggle or any orga
 ---
 
 ## Explanation for the code for myself :
+
+import pandas as pd
+df = pd.read_csv("train.csv") 
+ we imported the pandas library and then we are going to read the training dataset
+
+df.head()
+this displays the five rows of the dataset
+
+df.info()
+this shows the summary of the dataframe like the number of rows etc
+
+df.describe()
+this provides the descriptive status like the mean median etc
+
+df.columns
+this lists all column names of the dataframe
+
+features = ["GrLivArea", "BedroomAbvGr", "FullBath", "SalePrice"]
+data = df[features]
+data = data.dropna()
+the first line selects three features as input and an output from the dataset
+then we are assigning the data as the features and dropping the missing values in it
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+sns.pairplot(data)
+plt.show()
+then we are importing the libararies seaborn and matplotlib for the visualisation and paiplot is used for creating scatter plot the last line displays the plot
+
+X = data[["GrLivArea", "BedroomAbvGr", "FullBath"]]
+y = data["SalePrice"]
+in x axis the features which are used to predict the prices are given that is the independent variables
+in y axis is the feature which is the output
+
